@@ -1,0 +1,32 @@
+[
+    {
+        "name": "David Copperfield",
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed3.jpg",
+        "category": "Illusionist"
+    },
+    {
+        "name": "Penn Jillette",
+        "image": "https://images.unsplash.com/photo-1594316663037-23fffae0d4e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+        "category": "Comedy Magic"
+    },
+    {
+        "name": "David Blaine",
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed2.jpg",
+        "category": "Street Magic"
+    },
+    {
+        "name": "Criss Angel",
+        "image": "https://images.unsplash.com/photo-1615962122149-ef6987cf19f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+        "category": "Mindfreak"
+    },
+    {
+        "name": "Derren Brown",
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed1.jpg",
+        "category": "Psychological Illusionist"
+    },
+    {
+        "name": "Lance Burton",
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed4.jpg",
+        "category": "Stage Magic"
+    }
+]
