@@ -1,9 +1,15 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const user = true
+    const { user, logOut } = useContext(AuthContext)
+    const handleUserLogOut = () => {
+        logOut()
+    }
+    console.log(user);
+
     const navItems = <>
         <NavLink to="/"
             className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
@@ -57,14 +63,23 @@ export const Nav = () => {
                     </ul>
                     <ul class="flex items-center hidden space-x-8 lg:flex">
                         <li>
-                            <a
-                                href="/"
-                                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                                aria-label="Sign up"
-                                title="Sign up"
-                            >
-                                Sign up
-                            </a>
+                            {
+                                user ? <li className="text-gray-300 mr-10 font-bold flex items-center gap-5 ">
+
+                                    <p title={user && user.displayName} className="text-3xl">
+                                        {user?.photoURL && <img className="w-12 rounded-full h-12" src={user?.photoURL
+                                        } /> || ''}
+
+                                    </p>
+                                    <p className=" border-fuchsia-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-fuchsia-500 ">
+                                        <NavLink onClick={handleUserLogOut} >Sign Out</NavLink>
+                                    </p>
+
+
+                                </li> : <li className="mr-10 border-fuchsia-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-fuchsia-500">
+                                    <NavLink className={({ isActive }) => (isActive ? 'text-purple-500' : 'default')} to='/login'>Login</NavLink>
+                                </li>
+                            }
                         </li>
                     </ul>
                     <div class="lg:hidden">
