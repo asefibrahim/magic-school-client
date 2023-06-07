@@ -23,7 +23,7 @@ const Banner = () => {
                     centeredSlides={false}
                     autoplay={{
                         delay: 2500,
-                        disableOnInteraction: true,
+                        disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
@@ -44,16 +44,23 @@ const Banner = () => {
                                 <img src="https://kitnew.moxcreative.com/magickom/wp-content/uploads/sites/4/elementor/thumbs/Group-4-pwmoe4ev44een20ikzp8ssaqbu5hu4enoa7ya6jl6o.png" alt="" />
                             </div>
 
-                            <h1 className=' text-8xl w-3/4 mx-auto text-[#b07603] '>What the eyes see and the ears hear, the mind believes.</h1>
+                            <h1 class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-7xl w-3/4 mx-auto">What The Eyes See and The Ears Hear, The Mind Believes.</h1>
                             <p className='text-2xl w-3/4 mx-auto  text-white'>Porttitor at tempor vehicula molestie sed vitae dis lacus suscipit class mi ornare suspendisse sagittisPorttitor at tempor vehicula molestie sed vitae dis lacus suscipit class mi ornare suspendisse</p>
 
-                            <button className='text-white bg-[#a46e02] px-8 hover:scale-110 transition py-4'>Discover More </button>
+                            <div className='w-56  mx-auto '>
+                                <a
+                                    class="block  rounded border bg-amber-600  px-12 py-5 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+
+                                >
+                                    Get Started
+                                </a>
+                            </div>
 
                         </div>
 
 
                     </SwiperSlide>
-                    <SwiperSlide>
+                    {/* <SwiperSlide>
 
                         <img className='relative' src="https://kitnew.moxcreative.com/magickom/wp-content/uploads/sites/4/2022/10/smiling-female-magician-with-two-white-little-doves-in-dark-background-1536x1147.jpg" alt="" />
 
@@ -70,7 +77,7 @@ const Banner = () => {
                         </div>
 
 
-                    </SwiperSlide>
+                    </SwiperSlide> */}
                     {/* <SwiperSlide>
 
                         <img className='relative' src="https://kitnew.moxcreative.com/magickom/wp-content/uploads/sites/4/2022/10/smiling-female-magician-with-two-white-little-doves-in-dark-background-1536x1147.jpg" alt="" />

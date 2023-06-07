@@ -2,31 +2,73 @@
     {
         "name": "David Copperfield",
         "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed3.jpg",
-        "category": "Illusionist"
+        "category": "Ring Magic",
+        "email": "davidcopperfield@example.com",
+        "taken_classes": 2,
+        "classId": 1
     },
     {
         "name": "Penn Jillette",
         "image": "https://images.unsplash.com/photo-1594316663037-23fffae0d4e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-        "category": "Comedy Magic"
+        "category": "Card Magic",
+        "email": "pennjillette@example.com",
+        "taken_classes": 3,
+        "classId": 2
     },
     {
         "name": "David Blaine",
         "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed2.jpg",
-        "category": "Street Magic"
+        "category": "Street and Ball Magic",
+        "email": "davidblaine@example.com",
+        "taken_classes": 4,
+        "classId": 3
     },
     {
         "name": "Criss Angel",
         "image": "https://images.unsplash.com/photo-1615962122149-ef6987cf19f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
-        "category": "Mindfreak"
+        "category": "Paper and Ink Magic",
+        "email": "crissangel@example.com",
+        "taken_classes": 3,
+        "classId": 4
     },
     {
         "name": "Derren Brown",
         "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed1.jpg",
-        "category": "Psychological Illusionist"
+        "category": "Psychology in Dice Magic",
+        "email": "derrenbrown@example.com",
+        "taken_classes": 12,
+        "classId": 5
     },
     {
         "name": "Lance Burton",
         "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/comed4.jpg",
-        "category": "Stage Magic"
+        "category": "Stage Magic and Silk",
+        "email": "lanceburton@example.com",
+        "taken_classes": 3,
+        "classId": 6
+    },
+    {
+        "name": "Chris Ramsay",
+        "image": "https://images.pexels.com/photos/4892195/pexels-photo-4892195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "category": "Escapology",
+        "email": "chrisramsay@example.com",
+        "taken_classes": 7,
+        "classId": 2345
+    },
+    {
+        "name": "Shin Lim",
+        "image": "https://images.unsplash.com/photo-1618590067592-a867d8b44403?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "category": "Mind Reading",
+        "email": "shinlim@example.com",
+        "taken_classes": 9,
+        "classId": 3456
+    },
+    {
+        "name": "Dynamo",
+        "image": "https://images.pexels.com/photos/11788156/pexels-photo-11788156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "category": "Coin Magic",
+        "email": "dynamo@example.com",
+        "taken_classes": 6,
+        "classId": 4567
     }
 ]

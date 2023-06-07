@@ -5,7 +5,7 @@ const InstructorSection = () => {
     useEffect(() => {
         fetch('pinstructor.json')
             .then(res => res.json())
-            .then(data => setPopularInstructor(data))
+            .then(data => setPopularInstructor(data.slice(0, 6)))
     }, [])
     console.log(popularInstructor);
 
@@ -22,12 +22,12 @@ const InstructorSection = () => {
                     <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-3">
 
                         {
-                            popularInstructor.map((instructor, index) => <div key={index} class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-slate-800 dark:border-gray-700 dark:hover:border-transparent">
+                            popularInstructor.map((instructor, index) => <div key={index} class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group bg-slate-900 hover:border-gray-700 dark:hover:border-transparent hover:shadow-2xl">
                                 <img className='h-96' src={instructor.image} alt="" />
 
                                 <h1 class="mt-4 text-2xl font-semibold text-gray-200 capitalize dark:text-white group-hover:text-white">{instructor.name}</h1>
 
-                                <p class="mt-2 text-gray-200 capitalize dark:text-gray-300 group-hover:text-gray-300">{instructor.category}</p>
+                                <p class="mt-2 text-gray-200 capitalize dark:text-gray-300 group-hover:text-gray-300">Specialist  :  {instructor.category}</p>
 
                                 <div class="flex mt-3 -mx-2 text-white">
                                     <a href="#" class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Reddit">
