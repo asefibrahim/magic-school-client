@@ -9,7 +9,7 @@ export const Nav = () => {
             className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
         <NavLink to="/instructors"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
-        {user && <NavLink to="/myToy"
+        {user && <NavLink to="/allClass"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>}
         {user && <NavLink to="/addToy"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Banner = () => {
+const Banner = ({ title }) => {
     return (
         <div>
             <section class="bg-gray-900 h-[500px] text-white">
