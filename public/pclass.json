@@ -1,26 +1,65 @@
 [
     {
         "name": "Card Magic",
-        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/slider-6.jpg"
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/slider-6.jpg",
+        "available_seats": 15,
+        "price": 50,
+        "instructor_name": "David Copperfield"
     },
     {
         "name": "Ring Magic",
-        "image": "https://images.unsplash.com/photo-1566977744254-f6c97ca4891f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+        "image": "https://images.unsplash.com/photo-1566977744254-f6c97ca4891f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "available_seats": 10,
+        "price": 40,
+        "instructor_name": "David Copperfield"
     },
     {
         "name": "Ball Magic",
-        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/slider-8.jpg"
+        "image": "https://yrkit.rometheme.pro/magicom/wp-content/uploads/sites/2/2021/04/slider-8.jpg",
+        "available_seats": 12,
+        "price": 45,
+        "instructor_name": "Penn Jillette"
     },
     {
         "name": "Paper and Ink Magic",
-        "image": "https://images.unsplash.com/photo-1478641300939-0ec5188d3802?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+        "image": "https://images.unsplash.com/photo-1478641300939-0ec5188d3802?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+        "available_seats": 8,
+        "price": 55,
+        "instructor_name": "Criss Angel"
     },
     {
         "name": "Dice Magic",
-        "image": "https://images.unsplash.com/photo-1558723223-0f8c63ea0fed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+        "image": "https://images.unsplash.com/photo-1558723223-0f8c63ea0fed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "available_seats": 10,
+        "price": 50,
+        "instructor_name": "Derren Brown"
     },
     {
         "name": "Silk Magic",
-        "image": "https://cdn11.bigcommerce.com/s-hc192472/images/stencil/1280x1280/products/1563/4459/Silk_Hankies_Magic_Trick_Gospel_Kids__09980.1606317192.png?c=2"
+        "image": "https://cdn11.bigcommerce.com/s-hc192472/images/stencil/1280x1280/products/1563/4459/Silk_Hankies_Magic_Trick_Gospel_Kids__09980.1606317192.png?c=2",
+        "available_seats": 12,
+        "price": 45,
+        "instructor_name": "Lance Burton"
+    },
+    {
+        "name": "Escapology",
+        "image": "https://images.pexels.com/photos/2817869/pexels-photo-2817869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "available_seats": 10,
+        "price": 60,
+        "instructor_name": "Chris Ramsay"
+    },
+    {
+        "name": "Mind Reading",
+        "image": "https://images.pexels.com/photos/4562685/pexels-photo-4562685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "available_seats": 8,
+        "price": 55,
+        "instructor_name": "Shin Lim"
+    },
+    {
+        "name": "Coin Magic",
+        "image": "https://images.pexels.com/photos/7412098/pexels-photo-7412098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "available_seats": 12,
+        "price": 50,
+        "instructor_name": "Dynamo"
     }
 ]

@@ -5,7 +5,7 @@ const ClassSection = () => {
     useEffect(() => {
         fetch('pclass.json')
             .then(res => res.json())
-            .then(data => setPopularClasses(data))
+            .then(data => setPopularClasses(data.slice(0, 6)))
     }, [])
 
     return (

@@ -19,19 +19,7 @@ const AllInstructors = () => {
 
 
 
-                    <div>
-                        <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-                            Core Team
-                        </p>
-                    </div>
-                    <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-200 sm:text-4xl md:mx-auto">
 
-                        our talented team of professionals
-                    </h2>
-                    <p className="text-base text-gray-200 md:text-lg">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque rem aperiam, eaque ipsa quae.
-                    </p>
                 </div>
                 <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
