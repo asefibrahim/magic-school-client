@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../../InstructorsPage/AllInstructors/Banner';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const AllClass = () => {
     const [allClass, setAllClass] = useState([])
     const { user } = useContext(AuthContext)
-
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('http://localhost:5000/classes')

@@ -8,6 +8,7 @@ import AllInstructors from "../Pages/InstructorsPage/AllInstructors/AllInstructo
 import AllClass from "../Pages/ClassPage/AllCllass/AllClass";
 import Login from "../Pages/Authentication/Login/Login";
 import Signup from "../Pages/Authentication/Signup/Signup";
+import StudentDashboard from "../Layoutes/DashboardLayout/StudentDashboard";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
             }
         ]
     },
+
+    {
+        path: '/dashboard/student',
+        element: <StudentDashboard></StudentDashboard>
+    }
 ]);
 
 export default router
