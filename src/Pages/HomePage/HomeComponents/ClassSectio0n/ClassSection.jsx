@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ClassSection = () => {
     const [popularClasses, setPopularClasses] = useState([])
     useEffect(() => {
-        fetch('pclass.json')
+        fetch('http://localhost:5000/classes')
             .then(res => res.json())
             .then(data => setPopularClasses(data.slice(0, 6)))
     }, [])

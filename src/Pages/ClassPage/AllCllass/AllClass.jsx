@@ -1,15 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Banner from '../../InstructorsPage/AllInstructors/Banner';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AllClass = () => {
     const [allClass, setAllClass] = useState([])
+    const { user } = useContext(AuthContext)
+
+
     useEffect(() => {
-        fetch('pclass.json')
+        fetch('http://localhost:5000/classes')
             .then(res => res.json())
             .then(data => setAllClass(data))
 
     }, [])
     console.log(allClass);
+
+    const handleSelect = (singleClass) => {
+
+        console.log(singleClass);
+        const { classId, image, instructor_name, name, price, _id } = singleClass
+
+        if (user && user.email) {
+            const selectedClass = { classId, image, instructor_name, name, price, _id }
+            fetch('http://localhost:5000/carts', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(selectedClass)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        // refetch cart to update the number of items in the cart
+
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Food added on the cart.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+
+        else {
+            Swal.fire({
+                title: 'Please login to order the food',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login', { state: { from: location } })
+                }
+            })
+        }
+    }
+
+
+
+
 
     return (
         <div>
@@ -42,7 +97,11 @@ const AllClass = () => {
 
                             <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
                                 <h1 class="text-lg font-bold text-slate-300">$ {SClass.price}</h1>
-                                <button class="px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none">Select Class</button>
+                                <button onClick={() => handleSelect(SClass)}
+
+                                    className="
+                                
+                                px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none">Select Class</button>
                             </div>
                         </div>)
                     }
