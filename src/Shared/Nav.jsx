@@ -17,7 +17,7 @@ export const Nav = () => {
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
         <NavLink to="/allClass"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>
-        {user && <NavLink to="/dashboard/student"
+        {user && <NavLink to="/studentDashboard"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
 
 

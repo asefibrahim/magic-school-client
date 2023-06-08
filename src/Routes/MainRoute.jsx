@@ -9,6 +9,7 @@ import AllClass from "../Pages/ClassPage/AllCllass/AllClass";
 import Login from "../Pages/Authentication/Login/Login";
 import Signup from "../Pages/Authentication/Signup/Signup";
 import StudentDashboard from "../Layoutes/DashboardLayout/StudentDashboard";
+import MyClasses from "../Pages/DashboardPage/StudentPage/myClasses";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -38,8 +39,15 @@ const router = createBrowserRouter([
     },
 
     {
-        path: '/dashboard/student',
-        element: <StudentDashboard></StudentDashboard>
+        path: '/studentDashboard',
+        element: <StudentDashboard></StudentDashboard>,
+        children: [
+            {
+                path: 'myClasses',
+                element: <MyClasses></MyClasses>
+            }
+        ]
+
     }
 ]);
 

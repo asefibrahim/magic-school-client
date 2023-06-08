@@ -15,7 +15,7 @@ const StudentDashboard = () => {
             <Nav></Nav>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content flex flex-col  ">
                     <Outlet></Outlet>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
@@ -24,7 +24,7 @@ const StudentDashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-lg">
                         <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Student Home</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaBook></FaBook>  My Selected CLass</NavLink></li>
+                        <li><NavLink to="/studentDashboard/myClasses"><FaBook></FaBook>  My Selected CLass</NavLink></li>
                         <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>  My Enrolled  CLass</NavLink></li>
 
                         <div className="divider"></div>

@@ -20,10 +20,13 @@ const AllClass = () => {
     const handleSelect = (singleClass) => {
 
         console.log(singleClass);
-        const { classId, image, instructor_name, name, price, _id } = singleClass
+        const { classId, image, instructor_name, name, price, _id, available_seats } = singleClass
 
-        if (user && user.email) {
-            const selectedClass = { classId, image, instructor_name, name, price, _id }
+        if (user && user?.email) {
+            const selectedClass = {
+                classId, image, instructor_name, name, price, _id, email: user?.email,
+                available_seats
+            }
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
