@@ -8,7 +8,7 @@ export const Nav = () => {
     const handleUserLogOut = () => {
         logOut()
     }
-    console.log(user);
+    const isInstructor = true
 
     const navItems = <>
         <NavLink to="/"
@@ -17,7 +17,9 @@ export const Nav = () => {
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
         <NavLink to="/allClass"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>
-        {user && <NavLink to="/studentDashboard"
+        {user && !isInstructor && <NavLink to="/studentDashboard"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
+        {isInstructor && <NavLink to="/instructorDashboard"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
 
 

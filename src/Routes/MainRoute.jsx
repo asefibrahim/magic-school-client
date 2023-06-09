@@ -10,6 +10,9 @@ import Login from "../Pages/Authentication/Login/Login";
 import Signup from "../Pages/Authentication/Signup/Signup";
 import StudentDashboard from "../Layoutes/DashboardLayout/StudentDashboard";
 import MyClasses from "../Pages/DashboardPage/StudentPage/myClasses";
+import InstructorDashboard from "../Layoutes/DashboardLayout/InstructorDashboard";
+import AddClass from "../Pages/DashboardPage/InstructorPage/AddClass/AddClass";
+import MyClass from "../Pages/DashboardPage/InstructorPage/MyClass/MyClass";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +51,20 @@ const router = createBrowserRouter([
             }
         ]
 
+    },
+    {
+        path: '/instructorDashboard',
+        element: <InstructorDashboard></InstructorDashboard>,
+        children: [
+            {
+                path: 'addClass',
+                element: <AddClass></AddClass>
+            },
+            {
+                path: 'myClass',
+                element: <MyClass></MyClass>
+            }
+        ]
     }
 ]);
 

@@ -3,13 +3,9 @@ import { FaHome, FaBook, FaFileSignature, FaUser, FaStore, FaPaperPlane } from '
 import { NavLink, Outlet } from 'react-router-dom';
 import { Nav } from '../../Shared/Nav';
 
-const StudentDashboard = () => {
 
-
-
+const InstructorDashboard = () => {
     return (
-
-
 
         <div>
             <Nav></Nav>
@@ -23,10 +19,12 @@ const StudentDashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-lg">
-                        <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Student Home</NavLink></li>
-                        <li><NavLink to="/studentDashboard/myClasses"><FaBook></FaBook>  My Selected CLass</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>  My Enrolled  CLass</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaPaperPlane /> Payment</NavLink></li>
+                        <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Instructor  Home</NavLink></li>
+                        <li><NavLink to="/instructorDashboard/myClass"><FaBook></FaBook>  My  CLasses</NavLink></li>
+                        <li><NavLink to="/instructorDashboard/addClass"><FaFileSignature></FaFileSignature> Add A  CLass</NavLink></li>
+                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>Total Enrolled Student</NavLink></li>
+                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>Feedback From Admin</NavLink></li>
+
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
@@ -39,9 +37,7 @@ const StudentDashboard = () => {
             </div>
         </div>
 
-
-
     );
 };
 
-export default StudentDashboard;
+export default InstructorDashboard;
