@@ -4,14 +4,15 @@ import useBookingClassCarts from '../../../Hooks/useBookingClassCarts';
 
 const myClasses = () => {
     const [classes, refetch] = useBookingClassCarts()
-
+    const totalPrice = classes.reduce((sum, single) => sum + single.price, 0)
+    console.log(totalPrice);
     return (
         <div>
-            <section class="container px-4 mx-auto">
-                <div class="flex items-center gap-x-3 ">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Total Toys</h2>
+            <section class="container px-4 mx-auto mt-12">
+                <div class="flex items-center justify-evenly gap-x-3 ">
+                    <h2 class="text-lg font-medium text-gray-800 dark:text-white bg-purple-100 px-2 py-1 rounded">Total Classes :  {classes.length}</h2>
+                    <h2 class="text-lg font-medium text-gray-800 dark:text-white bg-blue-100 px-2 py-1 rounded">Total Price : $ {totalPrice}</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400"> </span>
                 </div>
 
                 <div class="flex flex-col mt-6">
@@ -53,11 +54,10 @@ const myClasses = () => {
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Available seats</th>
 
                                             <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">Instructor Name</th>
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">More</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">Delete</th>
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500       dark:text-gray-400">Payment</th>
 
-                                            <th scope="col" class="relative py-3.5 px-4">
-                                                <span class="sr-only">Edit</span>
-                                            </th>
+
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">

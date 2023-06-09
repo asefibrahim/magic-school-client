@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const ClassRow = ({ singleClass, refetch }) => {
@@ -83,6 +84,39 @@ const ClassRow = ({ singleClass, refetch }) => {
 
 
 
+
+
+                </div>
+
+            </td>
+            <td>
+
+                <div>
+                    <Link
+                        class="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-2 text-white focus:outline-none focus:ring active:bg-indigo-500"
+                        to={`payment/${_id}`}
+                    >
+                        <span class="absolute -start-full transition-all group-hover:start-4">
+                            <svg
+                                class="h-5 w-5 rtl:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="text-lg font-medium transition-all group-hover:ms-4">
+                            Pay
+                        </span>
+                    </Link>
 
                 </div>
             </td>

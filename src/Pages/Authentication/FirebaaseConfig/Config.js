@@ -10,7 +10,7 @@ const firebaseConfig = {
     projectId: "magic-illusion-70851",
     storageBucket: "magic-illusion-70851.appspot.com",
     messagingSenderId: "730209646637",
-    appId: "1:730209646637:web:826f9aee394ace2a24e0a4"
+    appId: "1:730209646637:web:826f9aee394ace2a24e0a4",
 };
 
 // Initialize Firebase

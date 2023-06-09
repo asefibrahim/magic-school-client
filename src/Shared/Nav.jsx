@@ -8,7 +8,7 @@ export const Nav = () => {
     const handleUserLogOut = () => {
         logOut()
     }
-    const isInstructor = true
+    const isInstructor = false
 
     const navItems = <>
         <NavLink to="/"

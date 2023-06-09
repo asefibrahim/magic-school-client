@@ -13,6 +13,7 @@ import MyClasses from "../Pages/DashboardPage/StudentPage/myClasses";
 import InstructorDashboard from "../Layoutes/DashboardLayout/InstructorDashboard";
 import AddClass from "../Pages/DashboardPage/InstructorPage/AddClass/AddClass";
 import MyClass from "../Pages/DashboardPage/InstructorPage/MyClass/MyClass";
+import Payment from "../Pages/DashboardPage/StudentPage/Payment/Payment";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: 'myClasses',
                 element: <MyClasses></MyClasses>
+            },
+            {
+                path: 'myClasses/payment/:id',
+                element: <Payment></Payment>
             }
         ]
 

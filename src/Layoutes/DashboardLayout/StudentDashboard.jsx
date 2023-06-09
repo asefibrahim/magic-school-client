@@ -26,7 +26,7 @@ const StudentDashboard = () => {
                         <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Student Home</NavLink></li>
                         <li><NavLink to="/studentDashboard/myClasses"><FaBook></FaBook>  My Selected CLass</NavLink></li>
                         <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>  My Enrolled  CLass</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaPaperPlane /> Payment</NavLink></li>
+                        <li><NavLink to="/studentDashboard/payment"><FaPaperPlane /> Payment</NavLink></li>
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
