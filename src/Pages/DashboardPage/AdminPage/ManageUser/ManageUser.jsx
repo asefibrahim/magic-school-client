@@ -17,7 +17,7 @@ const ManageUser = () => {
     })
 
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000//users/admin/${user._id}`, {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -34,6 +34,10 @@ const ManageUser = () => {
                     })
                 }
             })
+    }
+
+    const handleMakeInstructor = () => {
+
     }
 
     const handleDelete = (user) => {
@@ -66,12 +70,12 @@ const ManageUser = () => {
                                     <th>{index + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.role === 'admin' ? 'admin' :
+                                    <td>{user.role === 'admin' ? 'Admin' :
                                         <button onClick={() => handleMakeAdmin(user)} className="btn  text-xs px-3 bg-orange-600  text-white">
                                             Make Admin<FaUserShield></FaUserShield></button>
                                     }</td>
-                                    <td>{user.role === 'admin' ? 'admin' :
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn  text-xs px-3 bg-orange-600  text-white">
+                                    <td>{user.role === 'instructor' ? 'Instructor' :
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn  text-xs px-3 bg-orange-600  text-white">
                                             Make Instructor<FaUserShield></FaUserShield></button>
                                     }</td>
                                     <td><button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
