@@ -25,7 +25,7 @@ const StudentDashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-lg">
                         <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Student Home</NavLink></li>
                         <li><NavLink to="/studentDashboard/myClasses"><FaBook></FaBook>  My Selected CLass</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>  My Enrolled  CLass</NavLink></li>
+                        <li><NavLink to="/studentDashboard/enrollClasses"><FaFileSignature></FaFileSignature>  My Enrolled  CLass</NavLink></li>
                         <li><NavLink to="/studentDashboard/payment"><FaPaperPlane /> Payment</NavLink></li>
 
                         <div className="divider"></div>
