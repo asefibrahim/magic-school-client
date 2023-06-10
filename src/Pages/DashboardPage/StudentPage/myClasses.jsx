@@ -5,7 +5,7 @@ import useBookingClassCarts from '../../../Hooks/useBookingClassCarts';
 const myClasses = () => {
     const [classes, refetch] = useBookingClassCarts()
     const totalPrice = classes.reduce((sum, single) => sum + single.price, 0)
-    console.log(totalPrice);
+   
     return (
         <div>
             <section class="container px-4 mx-auto mt-12">

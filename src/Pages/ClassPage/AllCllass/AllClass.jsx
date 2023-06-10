@@ -15,7 +15,7 @@ const AllClass = () => {
             .then(data => setAllClass(data))
 
     }, [])
-    console.log(allClass);
+
 
     const handleSelect = (singleClass) => {
 
@@ -24,7 +24,7 @@ const AllClass = () => {
 
         if (user && user?.email) {
             const selectedClass = {
-                classId, image, instructor_name, name, price, _id, email: user?.email,
+                classId, image, instructor_name, name, price, _id: _id, email: user?.email,
                 available_seats
             }
             fetch('http://localhost:5000/carts', {

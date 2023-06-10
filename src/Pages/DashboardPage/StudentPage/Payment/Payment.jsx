@@ -14,11 +14,11 @@ const Payment = () => {
     const priceClass = classes.find(single => single._id === id.id)
 
     const price = priceClass?.price
-    console.log(price);
+
     return (
         <div>
             <Elements stripe={stripePromise}>
-                <CheckoutForm price={price} classes={classes}></CheckoutForm>
+                <CheckoutForm price={price} priceClass={priceClass} ></CheckoutForm>
             </Elements>
 
         </div>

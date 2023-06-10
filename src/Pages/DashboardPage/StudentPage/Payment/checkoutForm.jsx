@@ -2,25 +2,30 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useContext, useEffect, useState } from 'react';
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
 import { AuthContext } from '../../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
-const checkoutForm = ({ price }) => {
+
+const checkoutForm = ({ priceClass, price, }) => {
     const stripe = useStripe()
     const { user } = useContext(AuthContext)
     const elements = useElements()
     const [axiosSecure] = useAxiosSecure()
     const [clientSecret, setCLientSecret] = useState('')
     const [transactionId, setTransactionId] = useState('')
+    const [cardError, setCardError] = useState('');
     const [processing, setProcessing] = useState(false)
 
-    if (price > 0) {
-        useEffect(() => {
+
+    useEffect(() => {
+        if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
                 .then(res => {
                     setCLientSecret(res.data.clientSecret)
 
                 })
-        }, [price, axiosSecure])
-    }
+        }
+    }, [price, axiosSecure])
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -40,7 +45,7 @@ const checkoutForm = ({ price }) => {
         if (error) {
             console.log('Errror', error
             );
-            setError(error.message)
+            setCardError(error.message)
         }
         else {
 
@@ -69,17 +74,42 @@ const checkoutForm = ({ price }) => {
         if (paymentIntent.status === 'succeeded') {
             const transactionId = paymentIntent.id
             setTransactionId(transactionId)
-            // const payment = {
-            //     email: user?.email,
-            //     transactionId: paymentIntent.id,
-            //     price,
-            //     date: new Date(),
-            //     quantity: cart.length,
-            //     CartItems: cart.map(item => item._id),
-            //     menuItems: cart.map(item => item.menuItemId),
-            //     status: 'service pending',
-            //     itemsName: cart.map(item => item.name)
-            // }
+            const payment = {
+                email: user?.email,
+                transactionId: paymentIntent.id,
+                price,
+                date: new Date(),
+
+                itemId: priceClass._id,
+
+                itemName: priceClass?.name,
+                itemImage: priceClass.image,
+                instructor_name: priceClass.instructor_name
+            }
+            console.log(priceClass._id);
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.insertResult.insertedId) {
+
+                        const available_seats = priceClass.available_seats - 1
+                        const updateSeatNumber = { available_seats, _id: priceClass._id }
+
+                        axiosSecure.put('/updateSeatNumber', updateSeatNumber)
+
+                            .then(data => {
+                                console.log(data);
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your file has been deleted.',
+                                    'success'
+                                )
+
+
+                            })
+                    }
+
+                })
 
         }
     }
@@ -87,8 +117,10 @@ const checkoutForm = ({ price }) => {
 
     return (
         <div>
+            <h1 className='text-3xl font-medium text-center mt-12'>Price For Your {priceClass?.name} class is $ {priceClass?.price}</h1>
+
             <form children onSubmit={handleSubmit}
-                className='w-3/4 mx-auto' >
+                className='w-1/2 mx-auto mt-28' >
                 <CardElement
                     options={{
                         style: {
@@ -105,10 +137,13 @@ const checkoutForm = ({ price }) => {
                         },
                     }}
                 />
-                <button disabled={!stripe && !clientSecret} className='btn-primary btn  my-5' type="submit" >
+                <button disabled={!stripe && !clientSecret && !processing} className='btn-primary btn w-full  mx-auto mt-12 my-5' type="submit" >
                     Pay
                 </button>
             </form>
+
+            {cardError && <p className="text-red-600 text-center ml-8">{cardError}</p>}
+            {transactionId && <p className="text-green-500 text-center">Transaction complete with transactionId: {transactionId}</p>}
         </div>
     );
 };
