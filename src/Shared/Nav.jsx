@@ -9,6 +9,7 @@ export const Nav = () => {
         logOut()
     }
     const isInstructor = false
+    const isAdmin = true
 
     const navItems = <>
         <NavLink to="/"
@@ -17,9 +18,11 @@ export const Nav = () => {
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
         <NavLink to="/allClass"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>
-        {user && !isInstructor && <NavLink to="/studentDashboard"
+        {user && !isInstructor && !isAdmin && <NavLink to="/studentDashboard"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
-        {isInstructor && <NavLink to="/instructorDashboard"
+        {isInstructor && !isAdmin && <NavLink to="/instructorDashboard"
+            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
+        {isAdmin && <NavLink to="/adminDashboard"
             className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
 
 

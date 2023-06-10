@@ -93,7 +93,11 @@ const checkoutForm = ({ priceClass, price, }) => {
                     if (res.data.insertResult.insertedId) {
 
                         const available_seats = priceClass.available_seats - 1
-                        const updateSeatNumber = { available_seats, _id: priceClass._id }
+                        const enrolled_student = priceClass.enrolled_student + 1
+                        const updateSeatNumber = {
+                            available_seats, _id: priceClass._id,
+                            enrolled_student
+                        }
 
                         axiosSecure.put('/updateSeatNumber', updateSeatNumber)
 
