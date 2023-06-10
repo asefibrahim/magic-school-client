@@ -1,10 +1,13 @@
 import React from 'react';
 import UpdateClass from './UpdateClass';
+import Swal from 'sweetalert2';
 
 const MyClassRow = ({ singleClass }) => {
-    const { name, available_seats, price, status, _id } = singleClass
+    const { name, available_seats, price, status, _id, feedback } = singleClass
 
-
+    const handleSeeFeedback = (feedback) => {
+        Swal.fire(feedback)
+    }
 
     return (
         <tr className="border-b border-opacity-20 dark:border-gray-700 text-xs dark:bg-gray-900">
@@ -20,14 +23,14 @@ const MyClassRow = ({ singleClass }) => {
             </td>
             <td className="p-3">
 
-                <p className="dark:text-gray-400 ps-2 py-1 rounded-lg bg-pink-200">{status}</p>
+                <p className={`dark:text-gray-400 ps-3  w-20 py-1 rounded-lg  ${status === 'approved' ? 'bg-green-200' : 'bg-pink-200'}`}>{status}</p>
             </td>
             <td className="p-3">
                 <p>01 Feb 2022</p>
                 <p className="dark:text-gray-400">Tuesday</p>
             </td>
             <td className="p-3">
-                <button className='btn btn-xs '>See feedback</button>
+                <button onClick={() => handleSeeFeedback(feedback)} className='btn btn-xs '>See feedback</button>
             </td>
             <td className="p-3">
 

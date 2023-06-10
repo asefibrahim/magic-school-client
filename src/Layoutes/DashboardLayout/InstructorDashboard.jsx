@@ -22,8 +22,7 @@ const InstructorDashboard = () => {
                         <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Instructor  Home</NavLink></li>
                         <li><NavLink to="/instructorDashboard/myClass"><FaBook></FaBook>  My  CLasses</NavLink></li>
                         <li><NavLink to="/instructorDashboard/addClass"><FaFileSignature></FaFileSignature> Add A  CLass</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>Total Enrolled Student</NavLink></li>
-                        <li><NavLink to="/dashboard/addItem"><FaFileSignature></FaFileSignature>Feedback From Admin</NavLink></li>
+
 
 
                         <div className="divider"></div>

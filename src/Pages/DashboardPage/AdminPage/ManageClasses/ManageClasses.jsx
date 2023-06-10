@@ -52,7 +52,32 @@ const ManageClasses = () => {
             }
         })
     }
+    const handleFeedback = async (single) => {
+        const { value: text } = await Swal.fire({
+            input: 'textarea',
+            inputLabel: 'Send Feedback',
+            inputPlaceholder: 'Type your Feedback here...',
+            inputAttributes: {
+                'aria-label': 'Type your Feedback here'
+            },
+            showCancelButton: true
+        })
 
+        if (text) {
+            Swal.fire(text)
+            const feedback = { text }
+            fetch(`http://localhost:5000/classes/feedback/${single._id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(feedback)
+            }).then(res => res.json()).then(data => {
+                console.log(data);
+
+            })
+        }
+    }
 
 
     return (
@@ -61,7 +86,7 @@ const ManageClasses = () => {
 
 
                 {
-                    allClasses.map(single => <article class="flex bg-stone-100 transition hover:shadow-xl shadow-lg">
+                    allClasses.map(single => <article class="flex bg-stone-50 transition hover:shadow-xl shadow-lg">
                         <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
                             <time
                                 datetime="2022-10-10"
@@ -117,12 +142,12 @@ const ManageClasses = () => {
                                 >
                                     Deny
                                 </button>
-                                <a
-                                    href="#"
+                                <button onClick={() => handleFeedback(single)}
+
                                     class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
                                 >
                                     Send Feedback
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </article>)
