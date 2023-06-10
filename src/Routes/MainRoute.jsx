@@ -16,6 +16,7 @@ import MyClass from "../Pages/DashboardPage/InstructorPage/MyClass/MyClass";
 import Payment from "../Pages/DashboardPage/StudentPage/Payment/Payment";
 import EnrollClasses from "../Pages/DashboardPage/StudentPage/EnrollClasses/EnrollClasses";
 import AdminDashboard from "../Layoutes/DashboardLayout/AdminDashboard";
+import ManageUser from "../Pages/DashboardPage/AdminPage/ManageUser/ManageUser";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -79,7 +80,13 @@ const router = createBrowserRouter([
     },
     {
         path: '/adminDashboard',
-        element: <AdminDashboard></AdminDashboard>
+        element: <AdminDashboard></AdminDashboard>,
+        children: [
+            {
+                path: 'manageUsers',
+                element: <ManageUser></ManageUser>
+            }
+        ]
     }
 ]);
 

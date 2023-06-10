@@ -21,10 +21,10 @@ const AdminDashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-lg">
                         <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome>Admin Home</NavLink></li>
+
+                        <li><NavLink to="/adminDashboard/manageUsers"><FaFileSignature></FaFileSignature>Manage Users</NavLink></li>
+
                         <li><NavLink to="/instructorDashboard/myClass"><FaBook></FaBook>  Manage  CLasses</NavLink></li>
-                        <li><NavLink to="/instructorDashboard/addClass"><FaFileSignature></FaFileSignature>Manage Users</NavLink></li>
-
-
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
