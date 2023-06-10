@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure()
-    const { data: allClasses = [] } = useQuery({
+    const { data: allClasses = [], refetch } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
             const res = await axiosSecure.get('/classes')
@@ -12,6 +13,27 @@ const ManageClasses = () => {
         }
     })
     console.log(allClasses);
+
+    const handleMakeApproved = (single) => {
+        Swal.fire({
+            title: 'Are you for approving the call',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes !'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/classes/${single._id}`, {
+                    method: 'PATCH'
+                }).then(res => res.json()).then(data => {
+                    console.log(data);
+                })
+            }
+        })
+    }
+
+
 
     return (
         <div>
@@ -62,12 +84,12 @@ const ManageClasses = () => {
                             </div>
 
                             <div class="sm:flex gap-3 sm:items-end sm:justify-end">
-                                <a
-                                    href="#"
+                                <button onClick={() => handleMakeApproved(single)}
+
                                     class="block bg-green-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
                                 >
                                     Approve
-                                </a>
+                                </button>
                                 <a
                                     href="#"
                                     class="block bg-red-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
