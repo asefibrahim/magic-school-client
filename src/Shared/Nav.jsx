@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import useAdmin from "../Hooks/useAdmin";
 
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ export const Nav = () => {
         logOut()
     }
     const isInstructor = false
-    const isAdmin = true
+   const [isAdmin]=useAdmin()
 
     const navItems = <>
         <NavLink to="/"

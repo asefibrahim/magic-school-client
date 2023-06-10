@@ -24,7 +24,7 @@ const AdminDashboard = () => {
 
                         <li><NavLink to="/adminDashboard/manageUsers"><FaFileSignature></FaFileSignature>Manage Users</NavLink></li>
 
-                        <li><NavLink to="/instructorDashboard/myClass"><FaBook></FaBook>  Manage  CLasses</NavLink></li>
+                        <li><NavLink to="/adminDashboard/manageClasses"><FaBook></FaBook>  Manage  CLasses</NavLink></li>
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
