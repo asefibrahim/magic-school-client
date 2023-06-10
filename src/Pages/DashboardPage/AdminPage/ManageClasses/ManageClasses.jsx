@@ -28,6 +28,26 @@ const ManageClasses = () => {
                     method: 'PATCH'
                 }).then(res => res.json()).then(data => {
                     console.log(data);
+                    refetch()
+                })
+            }
+        })
+    }
+    const handleMakeDenied = (single) => {
+        Swal.fire({
+            title: 'Are you for Denying the class',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes !'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/classes/denied/${single._id}`, {
+                    method: 'PATCH'
+                }).then(res => res.json()).then(data => {
+                    console.log(data);
+                    refetch()
                 })
             }
         })
@@ -78,24 +98,25 @@ const ManageClasses = () => {
                                 </h3>
 
 
-                                <p class="mt-3 line-clamp-3 text-lg   bg-purple-200 w-40 ps-3 text-gray-700 py-2">
-                                    Status :  {single?.status}
+                                <p class={`mt-3 line-clamp-3 text-lg    w-28 ps-4 text-gray-700 py-2 ${single.status === 'approved' ? 'bg-green-300' : 'bg-purple-200' && single.status === 'denied' ? 'bg-red-300' : 'bg-purple-200'}`}>
+                                    {single?.status}
                                 </p>
                             </div>
 
                             <div class="sm:flex gap-3 sm:items-end sm:justify-end">
                                 <button onClick={() => handleMakeApproved(single)}
-
+                                    disabled={single.status === 'approved' || single.status === 'denied'}
                                     class="block bg-green-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
                                 >
                                     Approve
                                 </button>
-                                <a
-                                    href="#"
+                                <button onClick={() => handleMakeDenied(single)}
+
+                                    disabled={single.status === 'approved' || single.status === 'denied'}
                                     class="block bg-red-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
                                 >
                                     Deny
-                                </a>
+                                </button>
                                 <a
                                     href="#"
                                     class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"

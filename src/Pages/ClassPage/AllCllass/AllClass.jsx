@@ -80,7 +80,7 @@ const AllClass = () => {
 
 
                     {
-                        allClass.map((SClass, index) => SClass.status === 'pending' && <div key={index} class="max-w-lg overflow-hidden bg-slate-900   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl  dark:bg-gray-800">
+                        allClass.map((SClass, index) => SClass.status === 'approved' && <div key={index} class="max-w-lg overflow-hidden bg-slate-900   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl  dark:bg-gray-800">
                             <div class="px-4 py-2">
                                 <h1 class="text-xl font-bold text-gray-300 uppercase dark:text-white">{SClass.name}</h1>
                                 <p class="mt-1 text-lg text-gray-400 dark:text-gray-400">
