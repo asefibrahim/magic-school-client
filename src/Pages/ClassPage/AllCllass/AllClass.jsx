@@ -12,6 +12,7 @@ const AllClass = () => {
     const navigate = useNavigate()
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
+
     useEffect(() => {
         fetch('http://localhost:5000/classes')
             .then(res => res.json())
@@ -114,11 +115,15 @@ const AllClass = () => {
 
                                     className={
 
-                                        `px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none ${(isAdmin || isInstructor) && ' btn-disabled bg-slate-200'}`} >Select Class</button>
+                                        `px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none  
+                                        
+                                       
+
+                                        
+                                        ${SClass.available_seats === 0 && 'bg-red-800 text-slate-400 btn-disabled'}       ${(isAdmin || isInstructor) && ' btn-disabled bg-slate-200'}`}  >Select Class</button>
                             </div>
                         </div>)
                     }
-
 
 
 

@@ -123,7 +123,13 @@ const ManageClasses = () => {
                                 </h3>
 
 
-                                <p class={`mt-3 line-clamp-3 text-lg    w-28 ps-4 text-gray-700 py-2 ${single.status === 'approved' ? 'bg-green-300' : 'bg-purple-200' && single.status === 'denied' ? 'bg-red-300' : 'bg-purple-200'}`}>
+
+
+
+
+
+
+                                <p class={`mt-3 line-clamp-3 text-sm inline-flex items-center   rounded-full gap-x-2  dark:bg-gray-800  uppercase  w-28 ps-5  py-2 ${single.status === 'approved' ? 'text-emerald-500  bg-emerald-100/60 ' : 'bg-purple-200' && single.status === 'denied' ? 'bg-red-100/60  text-red-500' : ' text-indigo-500 bg-indigo-100/60'}`}>
                                     {single?.status}
                                 </p>
                             </div>

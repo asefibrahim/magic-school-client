@@ -23,7 +23,7 @@ const EnrollClasses = () => {
 
                 {
                     enrolledClasses.map(singleClass => <article key={singleClass._id}
-                        class="group">
+                        class="group shadow-lg rounded-lg">
                         <img
                             alt="Lava"
                             src={singleClass.
@@ -31,7 +31,7 @@ const EnrollClasses = () => {
                             class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
                         />
 
-                        <div class="p-4">
+                        <div class="p-4 ">
                             <a href="#">
                                 <h3 class="text-lg font-medium text-gray-900">
                                     Class Name : {singleClass.

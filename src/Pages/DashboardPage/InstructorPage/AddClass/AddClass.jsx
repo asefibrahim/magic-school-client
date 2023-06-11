@@ -28,7 +28,10 @@ const AddClass = () => {
             instructor_name: InstructorName,
             price: parseFloat(price),
             classId: parseFloat(classId),
-            status: 'pending'
+            status: 'pending',
+
+            enrolled_student: 0
+
         }
         console.log(classInfo);
         axiosSecure.post('/classes', classInfo)
@@ -88,7 +91,7 @@ const AddClass = () => {
                         </div>
                         <div className="form-control w-full ml-4">
                             <label className="label">
-                                <span className="label-text font-semibold">Class ID (Between 1-9)*</span>
+                                <span className="label-text font-semibold">Class ID (Between 20 to 200)*</span>
                             </label>
                             <input type="number" placeholder="Type here" className="input input-bordered w-full " name='classId' required />
                         </div>

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
@@ -7,8 +7,10 @@ import useInstructor from "../Hooks/useInstructor";
 export const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleUserLogOut = () => {
         logOut()
+        navigate('/login')
     }
 
     const [isAdmin] = useAdmin()

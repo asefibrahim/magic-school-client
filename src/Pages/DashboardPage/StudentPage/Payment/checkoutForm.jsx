@@ -14,7 +14,7 @@ const checkoutForm = ({ priceClass, price, }) => {
     const [transactionId, setTransactionId] = useState('')
     const [cardError, setCardError] = useState('');
     const [processing, setProcessing] = useState(false)
-
+    console.log(priceClass);
 
     useEffect(() => {
         if (price > 0) {
@@ -93,13 +93,14 @@ const checkoutForm = ({ priceClass, price, }) => {
                     if (res.data.insertResult.insertedId) {
 
                         const available_seats = priceClass.available_seats - 1
-                        const enrolled_student = priceClass.enrolled_student + 1
+                        const enrolled_student = priceClass.enrolled_student
+                            + 1
                         const updateSeatNumber = {
                             available_seats, _id: priceClass._id,
-                            enrolled_student
+                            enrolled_student, classId: priceClass.classId
                         }
 
-                        axiosSecure.put('/updateSeatNumber', updateSeatNumber)
+                        axiosSecure.patch('/updateSeatNumber', updateSeatNumber)
 
                             .then(data => {
                                 console.log(data);
