@@ -1,17 +1,25 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaBeer, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import GoogleLogin from '../../../Shared/GoogleLogin';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { login } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
         login(data.email, data.password)
             .then(result => {
+                Swal.fire('Login Successful !')
                 console.log(result.user);
+                reset()
+                navigate(from)
             })
     }
 
@@ -62,11 +70,7 @@ const Login = () => {
                                     Login
                                 </span>
                             </button>
-                            <button type="submit" class="w-full px-4 py-3 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 mt-6">
-                                <div class="w-4/5 mx-auto ms-52  text-center">
-                                    <p> <FaGoogle></FaGoogle></p>
-                                </div>
-                            </button>
+                            <GoogleLogin></GoogleLogin>
                         </form>
                         <div class="pt-12 pb-12 text-center">
                             <p>

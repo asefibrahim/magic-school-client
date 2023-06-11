@@ -1,17 +1,27 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaGoogle, FaUser, FaFile, FaPassport } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import GoogleLogin from '../../../Shared/GoogleLogin';
+import Swal from 'sweetalert2';
 
 
 const Signup = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext)
+    const [error, setError] = useState('')
     const [image, setImage] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || "/";
     const imageHostingUrl = "https://api.imgbb.com/1/upload?key=7d6531eb09a44143c919ad17d6300d95"
     const onSubmit = data => {
         console.log(data);
+        if (data.password !== data.confirmPassword) {
+            setError('Password Did not Match')
+            return
+        }
         const formData = new FormData()
         formData.append('image', data.image[0])
 
@@ -33,7 +43,8 @@ const Signup = () => {
             .then(result => {
                 console.log(result.user);
                 const loggedUser = result.user
-
+                setError('')
+                Swal.fire('Registration Successful !')
                 console.log(loggedUser);
                 console.log(data);
 
@@ -53,7 +64,8 @@ const Signup = () => {
                             .then(data => {
                                 console.log(data);
                                 if (data.insertedId) {
-                                    alert('insurted user to db')
+                                    reset()
+                                    navigate(from)
                                 }
                             })
 
@@ -113,7 +125,17 @@ const Signup = () => {
                                                 </path>
                                             </svg>
                                         </span>
-                                        <input type="password" id="design-login-password" class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Password"  {...register("password", { required: true })} />
+
+                                        <input type="password"   {...register("password", {
+                                            required: true,
+                                            minLength: 6,
+                                            maxLength: 20,
+                                            pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                        })} placeholder="password" className='  border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent' />
+
+
+
+
                                     </div>
                                 </div>
                                 <div class="flex flex-col pt-4 ">
@@ -135,17 +157,23 @@ const Signup = () => {
                                         <input type="file" id="design-login-password" class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder=" Chose Photo" {...register("image", { required: true })} />
                                     </div>
                                 </div>
+
+                                <div className='mb-5    '> {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
+                                    {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
+                                    {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
+                                    {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
+                                    <p className='text-red-600'>{error}</p>
+                                </div>
+
                                 <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
                                     <span class="w-full">
                                         Login
                                     </span>
                                 </button>
-                                <button type="submit" class="w-full px-4 py-3 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 mt-6">
-                                    <div class="w-4/5 mx-auto ms-52  text-center">
-                                        <p> <FaGoogle></FaGoogle></p>
-                                    </div>
-                                </button>
+                                <GoogleLogin></GoogleLogin>
                             </form>
+
+
                             <div class="pt-12 pb-12 text-center">
                                 <p>
                                     Already have an account?

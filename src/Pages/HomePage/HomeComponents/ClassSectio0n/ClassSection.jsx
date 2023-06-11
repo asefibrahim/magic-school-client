@@ -36,8 +36,11 @@ const ClassSection = () => {
                                 alt=""
                             />2
                             <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
+                                <p className="text-lg mb-2 font-medium tracking-wide text-white">
+                                    {singleClass.name}
+                                </p>
                                 <p className="text-sm font-medium tracking-wide text-white">
-                                    Class Name :  {singleClass.name}
+                                    Enrolled Student :  {singleClass.enrolled_student}
                                 </p>
                             </div>
                         </div>)

@@ -3,12 +3,15 @@ import Banner from '../../InstructorsPage/AllInstructors/Banner';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useAdmin from '../../../Hooks/useAdmin';
+import useInstructor from '../../../Hooks/useInstructor';
 
 const AllClass = () => {
     const [allClass, setAllClass] = useState([])
     const { user } = useContext(AuthContext)
     const navigate = useNavigate()
-
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
     useEffect(() => {
         fetch('http://localhost:5000/classes')
             .then(res => res.json())
@@ -80,7 +83,7 @@ const AllClass = () => {
 
 
                     {
-                        allClass.map((SClass, index) => SClass.status === 'approved' && <div key={index} class="max-w-lg overflow-hidden bg-slate-900   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl  dark:bg-gray-800">
+                        allClass.map((SClass, index) => SClass.status === 'approved' && <div key={index} class={`max-w-lg overflow-hidden bg-slate-900   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl  dark:bg-gray-800 ${SClass.available_seats === 0 && 'bg-red-900'}  `}>
                             <div class="px-4 py-2">
                                 <h1 class="text-xl font-bold text-gray-300 uppercase dark:text-white">{SClass.name}</h1>
                                 <p class="mt-1 text-lg text-gray-400 dark:text-gray-400">
@@ -94,6 +97,12 @@ const AllClass = () => {
                                     }
 
                                 </p>
+                                <p class="mt-1 text-lg text-gray-400 dark:text-gray-400">
+
+                                    <span className='font-semibold'>  Enrolled Student</span> : {SClass.enrolled_student
+                                    }
+
+                                </p>
 
                             </div>
 
@@ -103,9 +112,9 @@ const AllClass = () => {
                                 <h1 class="text-lg font-bold text-slate-300">$ {SClass.price}</h1>
                                 <button onClick={() => handleSelect(SClass)}
 
-                                    className="
-                            
-                            px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none">Select Class</button>
+                                    className={
+
+                                        `px-3 py-1 text-sm  font-semibold text-gray-700  transition-colors duration-300 transform bg-yellow-600 rounded hover:bg-gray-200 focus:outline-none ${(isAdmin || isInstructor) && ' btn-disabled bg-slate-200'}`} >Select Class</button>
                             </div>
                         </div>)
                     }
