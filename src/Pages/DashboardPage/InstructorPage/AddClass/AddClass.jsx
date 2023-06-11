@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import { AuthContext } from '../../../../Providers/AuthProvider';
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const AddClass = () => {
     const { user } = useContext(AuthContext)
@@ -33,12 +34,17 @@ const AddClass = () => {
         axiosSecure.post('/classes', classInfo)
             .then(data => {
                 console.log(data.data);
+                if (data.data.insertedId) {
+                    Swal.fire('Class info has been Sent to Admin')
+                }
             })
 
     }
     return (
         <div>
-            <div className="w-full px-10">
+            <div className="w-full px-10 bg-stone-50 pb-5">
+
+                <h1 className='text-5xl font-medium text-center pt-12 mb-5'>Add Your Class</h1>
 
                 <form onSubmit={handleSubmit} >
                     <div className="form-control w-full mb-4">
@@ -47,7 +53,7 @@ const AddClass = () => {
                         </label>
                         <input type="text"
 
-                            className="input input-bordered w-full " name='className' />
+                            className="input input-bordered w-full " name='className' required />
                     </div>
                     <div className="flex my-4">
                         <div className=" w-full mb-4">
@@ -56,7 +62,7 @@ const AddClass = () => {
                             </label>
                             <input type="text"
 
-                                className="input input-bordered w-full " value={user?.displayName} readOnly />
+                                className="input input-bordered w-full " value={user?.displayName} readOnly required />
                         </div>
                         <div className="form-control w-full ml-4">
                             <label className="label">
@@ -72,19 +78,19 @@ const AddClass = () => {
                             </label>
                             <input type="number" placeholder="Recipe Name"
 
-                                className="input input-bordered w-full " name='availableSeats' />
+                                className="input input-bordered w-full " name='availableSeats' required />
                         </div>
                         <div className="form-control w-full ml-4">
                             <label className="label">
                                 <span className="label-text font-semibold">Price*</span>
                             </label>
-                            <input type="number" placeholder="Type here" className="input input-bordered w-full " name='price' />
+                            <input type="number" placeholder="Type here" className="input input-bordered w-full " name='price' aria-required />
                         </div>
                         <div className="form-control w-full ml-4">
                             <label className="label">
                                 <span className="label-text font-semibold">Class ID (Between 1-9)*</span>
                             </label>
-                            <input type="number" placeholder="Type here" className="input input-bordered w-full " name='classId' />
+                            <input type="number" placeholder="Type here" className="input input-bordered w-full " name='classId' required />
                         </div>
                     </div>
                     <div className="flex my-4">
@@ -92,13 +98,13 @@ const AddClass = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Class  Image*</span>
                             </label>
-                            <input type="text" className="file-input file-input-bordered w-full px-4" placeholder="Image URL" name='image' />
+                            <input type="text" className="file-input file-input-bordered w-full px-4" placeholder="Image URL" name='image' required />
                         </div>
 
                     </div>
 
 
-                    <input className="btn btn-sm mt-4" type="submit" value="Add Item" />
+                    <input className="btn btn-outline mt-4" type="submit" value="Add Class" />
                 </form>
             </div>
         </div>

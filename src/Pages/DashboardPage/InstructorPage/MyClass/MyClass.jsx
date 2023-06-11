@@ -9,8 +9,8 @@ const MyClass = () => {
     return (
         <div>
 
-            <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
-                <h2 className="mb-4 text-2xl font-semibold leading-tight">Invoices</h2>
+            <div className="container bg-stone-50  p-2 mx-auto sm:p-4 dark:text-gray-100">
+                <h2 className="mb-8 text-2xl font-semibold leading-tight">My Added Classes : {instructorClasses.length}</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-xs">
 
@@ -25,13 +25,16 @@ const MyClass = () => {
 
                                 <th className="p-3">Feedback</th>
                                 <th className="p-3">Update</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 instructorClasses.map(singleClass => {
                                     return <>
-                                        <MyClassRow key={singleClass._id} singleClass={singleClass}></MyClassRow>
+                                        <MyClassRow key={singleClass._id} singleClass={singleClass}
+                                            refetch={refetch}
+                                        ></MyClassRow>
                                         {/* <UpdateClass singleClass={singleClass}></UpdateClass> */}
                                     </>
                                 })
