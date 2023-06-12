@@ -52,7 +52,7 @@ const Signup = () => {
                     .then(() => {
                         const savedUser = { name: data.name, email: data.email }
                         console.log(savedUser);
-                        fetch('http://localhost:5000/user', {
+                        fetch('https://illusion-school-server.vercel.app/user', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

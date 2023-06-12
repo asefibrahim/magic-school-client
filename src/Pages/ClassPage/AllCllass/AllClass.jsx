@@ -14,7 +14,7 @@ const AllClass = () => {
     const [isInstructor] = useInstructor()
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://illusion-school-server.vercel.app/classes')
             .then(res => res.json())
             .then(data => setAllClass(data))
 
@@ -31,7 +31,7 @@ const AllClass = () => {
                 classId, image, instructor_name, name, price, id: _id, email: user?.email,
                 available_seats, enrolled_student
             }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://illusion-school-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -76,9 +76,9 @@ const AllClass = () => {
 
     return (
         <div>
-            <Banner></Banner>
+            <Banner title={'Here is all the class information '} img={'https://embed.lottiefiles.com/animation/42814'}></Banner>
 
-            <div className=' px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20 bg-[#1d1c1c]'>
+            <div className=' px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20 '>
 
                 <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-3'>
 

@@ -5,7 +5,7 @@ const AllInstructors = () => {
 
     const [AllInstructors, setAllInstructors] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/instructors')
+        fetch('https://illusion-school-server.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setAllInstructors(data))
     }, [])
@@ -13,8 +13,11 @@ const AllInstructors = () => {
 
     return (
         <div>
-            <Banner></Banner>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20 bg-[#1d1c1c]">
+            <Banner title={'Meet  our all the talented instructors'}
+
+                img={"https://embed.lottiefiles.com/animation/72882"}
+            ></Banner>
+            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20 ">
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
 
 

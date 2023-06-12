@@ -3,7 +3,7 @@ import UpdateClass from './UpdateClass';
 import Swal from 'sweetalert2';
 
 const MyClassRow = ({ singleClass, refetch }) => {
-    const { name, available_seats, price, status, _id, feedback } = singleClass
+    const { name, available_seats, price, status, _id, feedback, enrolled_student } = singleClass
 
     const handleSeeFeedback = (feedback) => {
         Swal.fire(feedback)
@@ -20,7 +20,7 @@ const MyClassRow = ({ singleClass, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/instructorClass/${id}`, {
+                fetch(`https://illusion-school-server.vercel.app/classes/instructorClass/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -55,8 +55,7 @@ const MyClassRow = ({ singleClass, refetch }) => {
                 <p className={`dark:text-gray-400 ps-3  w-20 py-1 rounded-lg  ${status === 'approved' ? 'bg-green-200' : 'bg-pink-200'}`}>{status}</p>
             </td>
             <td className="p-3">
-                <p>01 Feb 2022</p>
-                <p className="dark:text-gray-400">Tuesday</p>
+                {enrolled_student}
             </td>
             <td className="p-3">
                 <button onClick={() => handleSeeFeedback(feedback)} className='btn btn-xs '>See feedback</button>

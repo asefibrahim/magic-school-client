@@ -21,10 +21,14 @@ const ExtraSectionOne = () => {
 
                         <div class="mt-4 sm:mt-8">
                             <a
+                                class="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px]    text-white focus:outline-none focus:ring active:text-opacity-75 "
 
-                                class="inline-block rounded-full btn-outline border border-fuchsia-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-orange-700 focus:outline-none focus:ring focus:ring-yellow-400"
                             >
-                                Get Yours Today
+                                <span
+                                    class="block rounded-sm bg-white px-8 py-3 text-sm font-medium bg-transparent"
+                                >
+                                    Get Yours Today
+                                </span>
                             </a>
                         </div>
                     </div>

@@ -1,42 +1,43 @@
 import React from 'react';
 
-const Banner = ({ title }) => {
+const Banner = ({ title, img, }) => {
     return (
         <div>
-            <section class="bg-gray-900 h-[500px] text-white">
+            <section class="bg-gray-900 h-[500px] md:flex gap-5  items-center text-white pe-16" >
                 <div
-                    class="mx-auto max-w-screen-xl px-4  lg:flex py-32 lg:items-center"
+                    class=" py-32 px-12 "
                 >
-                    <div class="mx-auto max-w-3xl text-center">
+                    <div class="mx-auto  text-start">
                         <h1
-                            class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+                            class="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl w-3/4"
                         >
-                            Here's Our Most Talented
-
-                            <span class="sm:block"> All The Instructors. </span>
+                            {title}
                         </h1>
 
-                        <p class="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+                        <p class="mt-4 max-w-xl sm:text-xl/relaxed">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo
                             tenetur fuga ducimus numquam ea!
                         </p>
 
-                        <div class="mt-8 flex flex-wrap justify-center gap-4">
+                        <div class="mt-8 flex flex-wrap r gap-4">
                             <a
-                                class="block w-full rounded border bg-amber-600  px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                                class="block w-full rounded border hover:bg-amber-500   px-12 py-3 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
 
                             >
                                 Get Started
                             </a>
 
                             <a
-                                class="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                                class="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
                                 href="/about"
                             >
                                 Learn More
                             </a>
                         </div>
                     </div>
+                </div>
+                <div className='w-96'>
+                    <iframe className='  text-white border-orange-500  rounded-lg rounded-tl-full  lg:h-96  md:h-64 h-60' src={img}></iframe>
                 </div>
             </section>
         </div>

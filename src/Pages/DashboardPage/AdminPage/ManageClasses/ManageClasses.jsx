@@ -24,7 +24,7 @@ const ManageClasses = () => {
             confirmButtonText: 'Yes !'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/${single._id}`, {
+                fetch(`https://illusion-school-server.vercel.app/classes/${single._id}`, {
                     method: 'PATCH'
                 }).then(res => res.json()).then(data => {
                     console.log(data);
@@ -43,7 +43,7 @@ const ManageClasses = () => {
             confirmButtonText: 'Yes !'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classes/denied/${single._id}`, {
+                fetch(`https://illusion-school-server.vercel.app/classes/denied/${single._id}`, {
                     method: 'PATCH'
                 }).then(res => res.json()).then(data => {
                     console.log(data);
@@ -66,7 +66,7 @@ const ManageClasses = () => {
         if (text) {
             Swal.fire(text)
             const feedback = { text }
-            fetch(`http://localhost:5000/classes/feedback/${single._id}`, {
+            fetch(`https://illusion-school-server.vercel.app/classes/feedback/${single._id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

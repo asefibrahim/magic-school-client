@@ -19,7 +19,7 @@ const UpdateClass = ({ singleClass }) => {
         }
         console.log(updateInfo);
 
-        axiosSecure.put(`http://localhost:5000/classes/${_id}`, updateInfo)
+        axiosSecure.put(`https://illusion-school-server.vercel.app/classes/${_id}`, updateInfo)
             .then(data => {
                 console.log(data);
                 if (data.data.modifiedCount > 0) {

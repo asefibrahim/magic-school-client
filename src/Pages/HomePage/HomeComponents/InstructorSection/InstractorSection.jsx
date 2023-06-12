@@ -13,9 +13,9 @@ const InstructorSection = () => {
         <div>
             <section class=" ">
                 <div class="container px-6 py-10 mx-auto">
-                    <h1 class="text-2xl font-semibold text-center  capitalize lg:text-5xl text-[#b07603] ">Meet our Popular Instructor</h1>
+                    <h1 class="text-2xl font-semibold text-center  capitalize lg:text-5xl text-orange-500 ">Meet our Popular Instructor</h1>
 
-                    <p class="max-w-2xl mx-auto my-6 text-center text-gray-200 dark:text-gray-300">
+                    <p class="max-w-2xl mx-auto my-6 text-center text-gray-700 dark:text-gray-300">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
                     </p>
 

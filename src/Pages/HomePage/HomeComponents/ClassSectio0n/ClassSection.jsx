@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ClassSection = () => {
     const [popularClasses, setPopularClasses] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://illusion-school-server.vercel.app/classes')
             .then(res => res.json())
             .then(data => setPopularClasses(data.slice(0, 6)))
     }, [])
@@ -12,7 +12,7 @@ const ClassSection = () => {
         <div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
-                    <h2 className="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-[#b07603]  sm:text-4xl sm:leading-none md:mb-6 group">
+                    <h2 className="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-orange-400  sm:text-4xl sm:leading-none md:mb-6 group">
                         <span className="inline-block mb-1 sm:mb-4">
                             Our Top CLasses <br />
                             <br className="hidden md:block" />
@@ -20,7 +20,7 @@ const ClassSection = () => {
                         </span>
                         <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
                     </h2>
-                    <p className="text-gray-200 lg:text-sm lg:max-w-md">
+                    <p className="text-gray-600 lg:text-sm lg:max-w-md">
                         "Sed ut perspiciatis unde omnis iste natus error sit iste voluptatem
                         accusantium doloremque rem aperiam, ipsa eaque quae. Sed ut
                         perspiciatis unde omnis iste."
@@ -34,7 +34,7 @@ const ClassSection = () => {
                                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                                 src={singleClass.image}
                                 alt=""
-                            />2
+                            />
                             <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
                                 <p className="text-lg mb-2 font-medium tracking-wide text-white">
                                     {singleClass.name}

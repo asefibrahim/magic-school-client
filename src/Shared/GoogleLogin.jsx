@@ -17,7 +17,7 @@ const GoogleLogin = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
-                fetch('http://localhost:5000/user', {
+                fetch('https://illusion-school-server.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
