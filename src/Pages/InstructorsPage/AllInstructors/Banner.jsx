@@ -21,11 +21,16 @@ const Banner = ({ title, img, }) => {
 
                         <div class="mt-8 flex flex-wrap r gap-4">
                             <a
-                                class="block w-full rounded border hover:bg-amber-500   px-12 py-3 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                                class="block w-full rounded border    px-12 py-3 text-sm font-medium 
+                                
+                                bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px]    text-white
+                                focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
 
                             >
                                 Get Started
                             </a>
+
+
 
                             <a
                                 class="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-purple-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"

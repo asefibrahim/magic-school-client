@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaHome, FaBook, FaFileSignature, FaUser, FaStore, FaPaperPlane } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Nav } from '../../Shared/Nav';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const InstructorDashboard = () => {
+
+    const { user } = useContext(AuthContext)
+    console.log(user);
     return (
 
         <div>
@@ -17,9 +21,23 @@ const InstructorDashboard = () => {
 
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+
+
+
+
+                    <label htmlFor="my-drawer-2" className="drawer-overlay">
+
+
+
+                    </label>
+
+
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-lg">
-                        <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Instructor  Home</NavLink></li>
+                        <div className='w-3/4 mx-auto '>
+                            <img className='w-16 h-16 rounded-full' src={user?.photoURL} alt="" />
+
+                        </div>
+                        <h1 className='font-medium mt-2 text-2xl mb-8'>{user?.displayName}  (Instructor) </h1>
                         <li><NavLink to="/instructorDashboard/myClass"><FaBook></FaBook>  My  CLasses</NavLink></li>
                         <li><NavLink to="/instructorDashboard/addClass"><FaFileSignature></FaFileSignature> Add A  CLass</NavLink></li>
 
@@ -27,8 +45,8 @@ const InstructorDashboard = () => {
 
                         <div className="divider"></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                        <li><NavLink to="/menu"><FaUser></FaUser> All Instructors</NavLink></li>
-                        <li><NavLink to="/order/salad"><FaStore></FaStore> All Classes</NavLink></li>
+                        <li><NavLink to="/instructors"><FaUser></FaUser> All Instructors</NavLink></li>
+                        <li><NavLink to="/allClass"><FaStore></FaStore> All Classes</NavLink></li>
 
                     </ul>
 

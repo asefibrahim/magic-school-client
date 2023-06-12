@@ -27,9 +27,9 @@ const UpdateClass = ({ singleClass }) => {
                     Swal.fire({
 
                         title: 'Success!',
-                        text: 'Toy information Updated Successfully',
+                        text: 'Class  information Updated Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+
                     })
                 }
             })

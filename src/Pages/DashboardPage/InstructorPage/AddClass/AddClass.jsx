@@ -39,6 +39,7 @@ const AddClass = () => {
                 console.log(data.data);
                 if (data.data.insertedId) {
                     Swal.fire('Class info has been Sent to Admin')
+                    form.reset()
                 }
             })
 

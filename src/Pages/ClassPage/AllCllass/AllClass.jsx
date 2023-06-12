@@ -46,7 +46,7 @@ const AllClass = () => {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'Food added on the cart.',
+                            title: `${name} Class is Selected `,
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -56,7 +56,7 @@ const AllClass = () => {
 
         else {
             Swal.fire({
-                title: 'Please login to order the food',
+                title: 'Please login to select the Class',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -76,7 +76,7 @@ const AllClass = () => {
 
     return (
         <div>
-            <Banner title={'Here is all the class information '} img={'https://embed.lottiefiles.com/animation/42814'}></Banner>
+            <Banner title={'Here is all the class information '} img={'https://embed.lottiefiles.com/animation/70217'}></Banner>
 
             <div className=' px-4 py-16 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 lg:py-20 '>
 

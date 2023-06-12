@@ -29,8 +29,8 @@ const MyClassRow = ({ singleClass, refetch }) => {
                             refetch()
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
+                                'Your Class has been deleted.',
+
                             )
                         }
                     })

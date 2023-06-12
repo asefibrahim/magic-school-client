@@ -21,10 +21,12 @@ import ManageClasses from "../Pages/DashboardPage/AdminPage/ManageClasses/Manage
 import PrivateRoute from "./PrivateRoute";
 import InstructorRout from "./InstructorRout";
 import AdminRoute from "./AdminRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -52,6 +54,7 @@ const router = createBrowserRouter([
     {
         path: '/studentDashboard',
         element: <PrivateRoute> <StudentDashboard></StudentDashboard></PrivateRoute>,
+
         children: [
             {
                 path: 'myClasses',

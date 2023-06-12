@@ -105,9 +105,9 @@ const checkoutForm = ({ priceClass, price, }) => {
                             .then(data => {
                                 console.log(data);
                                 Swal.fire(
-                                    'Deleted!',
-                                    'Your file has been deleted.',
-                                    'success'
+                                    'Payment has been Successfully Completed!',
+
+
                                 )
 
 

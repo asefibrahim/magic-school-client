@@ -1,7 +1,7 @@
 import React from 'react';
 import useInstructorClass from '../../../../Hooks/useInstructorClass';
 import MyClassRow from './MyClassRow';
-import UpdateClass from './UpdateClass';
+
 const MyClass = () => {
 
     const [refetch, instructorClasses] = useInstructorClass()

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const InstructorSection = () => {
     const [popularInstructor, setPopularInstructor] = useState([])
     useEffect(() => {
-        fetch('pinstructor.json')
+        fetch('https://illusion-school-server.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setPopularInstructor(data.slice(0, 6)))
     }, [])

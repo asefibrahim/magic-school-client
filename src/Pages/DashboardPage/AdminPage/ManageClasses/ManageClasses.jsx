@@ -16,7 +16,7 @@ const ManageClasses = () => {
 
     const handleMakeApproved = (single) => {
         Swal.fire({
-            title: 'Are you for approving the call',
+            title: 'Are you to approve the Class?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
