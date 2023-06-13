@@ -41,8 +41,8 @@ const Banner = ({ title, img, }) => {
                         </div>
                     </div>
                 </div>
-                <div className='w-96'>
-                    <iframe className='  text-white border-orange-500  rounded-lg rounded-tl-full  lg:h-96  md:h-64 h-60' src={img}></iframe>
+                <div className='w-1/2'>
+                    <iframe className='  text-white border-orange-500  rounded-lg rounded-tl-full  lg:h-[600px] w-full  md:h-full h-60' src={img}></iframe>
                 </div>
             </section>
         </div>

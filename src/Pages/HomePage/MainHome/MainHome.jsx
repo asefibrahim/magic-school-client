@@ -1,15 +1,15 @@
 import React from 'react';
-import Banner from '../HomeComponents/Banner/Banner';
+
 import ClassSection from '../HomeComponents/ClassSectio0n/ClassSection';
 import InstructorSection from '../HomeComponents/InstructorSection/InstractorSection';
 import ExtraSectionOne from '../HomeComponents/ExtraSections/ExtraSectionOne';
 import Slider from '../HomeComponents/Slider/Slider';
 import ExtraSectionTwo from '../HomeComponents/ExtraSections/ExtraSectionTwo';
-
+const isDark = false
 
 const MainHome = () => {
     return (
-        <div className=''>
+        <div>
             <Slider></Slider>
 
             <ClassSection></ClassSection>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -9,17 +9,26 @@ import Swal from 'sweetalert2';
 const Login = () => {
     const { login } = useContext(AuthContext)
     const location = useLocation()
+    const [error, setError] = useState('')
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || "/";
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data);
-        login(data.email, data.password)
+
+    const handleSubmit = e => {
+        e.preventDefault()
+
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+        login(email, password)
             .then(result => {
                 Swal.fire('Login Successful !')
                 console.log(result.user);
-                reset()
+
+
                 navigate(from)
+            })
+            .catch(error => {
+                setError(error.message)
             })
     }
 
@@ -42,7 +51,7 @@ const Login = () => {
                         <p class="text-3xl text-center">
                             Login Here
                         </p>
-                        <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col pt-3 md:pt-8">
+                        <form onSubmit={handleSubmit} class="flex flex-col pt-3 md:pt-8">
                             <div class="flex flex-col pt-4">
                                 <div class="flex relative ">
                                     <span class=" inline-flex  items-center px-3 border-t bg-white border-l border-b  border-gray-300 text-gray-500 shadow-sm text-sm">
@@ -51,7 +60,9 @@ const Login = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="text" id="design-login-email" class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email"  {...register("email", { required: true })} />
+                                    <input type="text" class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email" name='email'
+
+                                        defaultValue='asif@admin.com' />
                                 </div>
                             </div>
                             <div class="flex flex-col pt-4 mb-12">
@@ -62,16 +73,23 @@ const Login = () => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="password" id="design-login-password" class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Password" {...register("password", { required: true })} />
+                                    <input type="password"
+
+                                        class=" flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Password" name='password'
+                                        defaultValue='A123456a@' />
                                 </div>
+
                             </div>
+                            <p className='text-red-600 mb-5'>{error}</p>
                             <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
                                 <span class="w-full">
                                     Login
                                 </span>
                             </button>
-                            <GoogleLogin></GoogleLogin>
+                           
                         </form>
+                        <GoogleLogin></GoogleLogin>
+
                         <div class="pt-12 pb-12 text-center">
                             <p>
                                 Don&#x27;t have an account?

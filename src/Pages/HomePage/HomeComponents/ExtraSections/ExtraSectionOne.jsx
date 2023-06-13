@@ -25,7 +25,7 @@ const ExtraSectionOne = () => {
 
                             >
                                 <span
-                                    class="block rounded-sm bg-white px-8 py-3 text-sm font-medium bg-transparent"
+                                    class="block rounded-sm  px-8 py-3 text-sm font-medium bg-transparent"
                                 >
                                     Get Yours Today
                                 </span>

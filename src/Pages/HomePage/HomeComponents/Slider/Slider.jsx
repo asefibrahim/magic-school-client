@@ -47,11 +47,11 @@ const Slider = () => {
 
                                     <div>
                                         <a
-                                            class="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px]    text-white focus:outline-none focus:ring active:text-opacity-75"
+                                            class="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] text-white  focus:ring active:text-opacity-75"
 
                                         >
                                             <span
-                                                class="block rounded-sm bg-white px-8 py-3 text-sm font-medium bg-transparent"
+                                                class="block rounded-sm px-8 py-3 text-sm font-medium hover:bg-transparent"
                                             >
                                                 Get Started
                                             </span>
@@ -79,7 +79,7 @@ const Slider = () => {
 
                                         >
                                             <span
-                                                class="block rounded-sm bg-white px-8 py-3 text-sm font-medium bg-transparent"
+                                                class="block rounded-sm  px-8 py-3 text-sm font-medium bg-transparent"
                                             >
                                                 Get Started
                                             </span>
@@ -107,7 +107,7 @@ const Slider = () => {
 
                                         >
                                             <span
-                                                class="block rounded-sm bg-white px-8 py-3 text-sm font-medium bg-transparent"
+                                                class="block rounded-sm  px-8 py-3 text-sm font-medium bg-transparent"
                                             >
                                                 Get Started
                                             </span>
@@ -119,7 +119,7 @@ const Slider = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-            
+
 
 
                 </Swiper>

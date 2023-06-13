@@ -84,7 +84,7 @@ const AllClass = () => {
 
 
                     {
-                        allClass.map((SClass, index) => SClass.status === 'approved' && <div key={index} class={`max-w-lg overflow-hidden bg-slate-900   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl  dark:bg-gray-800 ${SClass.available_seats === 0 && 'bg-red-900'}  `}>
+                        allClass.map((SClass, index) => SClass.status === 'approved' && <div key={index} class={`max-w-lg overflow-hidden   transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl   ${SClass.available_seats === 0 ? 'bg-red-900' : 'bg-slate-900 '}  `}>
                             <div class="px-4 py-2">
                                 <h1 class="text-xl font-bold text-gray-300 uppercase dark:text-white">{SClass.name}</h1>
                                 <p class="mt-1 text-lg text-gray-400 dark:text-gray-400">
@@ -120,7 +120,7 @@ const AllClass = () => {
                                        
 
                                         
-                                        ${SClass.available_seats === 0 && 'bg-red-800 text-slate-400 btn-disabled'}       ${(isAdmin || isInstructor) && ' btn-disabled bg-slate-200'}`}  >Select Class</button>
+                                        ${SClass.available_seats === 0 ? 'bg-amber-900 text-slate-400 btn-disabled' : 'text-gray-700 bg-yellow-600  '}       ${(isAdmin || isInstructor) && ' btn-disabled bg-slate-200'}`}  >Select Class</button>
                             </div>
                         </div>)
                     }

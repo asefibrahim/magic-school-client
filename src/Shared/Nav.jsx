@@ -4,7 +4,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
 
-export const Nav = () => {
+export const Nav = ({ dark, setDark }) => {
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext)
     const navigate = useNavigate()
@@ -16,24 +17,29 @@ export const Nav = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
 
-
+    const handleCheckboxChange = event => {
+        setDark(event.target.checked);
+    };
     const navItems = <>
         <NavLink to="/"
-            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >  Home</NavLink>
         <NavLink to="/instructors"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
+            className={({ isActive }) => (isActive ? 'text-amber-500  font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >Instructors </NavLink>
         <NavLink to="/allClass"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >  Classes</NavLink>
         {user && !isInstructor && !isAdmin && <NavLink to="/studentDashboard"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
         {isInstructor && !isAdmin && <NavLink to="/instructorDashboard"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
         {isAdmin && <NavLink to="/adminDashboard"
-            className={({ isActive }) => (isActive ? 'text-amber-500' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
+            className={({ isActive }) => (isActive ? 'text-amber-500 font-medium tracking-wide' : 'font-medium tracking-wide text-gray-200 ')} >  Dashboard</NavLink>}
 
 
 
+        <li>
+            <input type="checkbox" className="toggle toggle-primarygit" onChange={handleCheckboxChange} />
 
+        </li>
 
 
 
@@ -81,13 +87,13 @@ export const Nav = () => {
                                         } /> || ''}
 
                                     </p>
-                                    <p className=" border-fuchsia-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-fuchsia-500 ">
+                                    <p className=" border-orange-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-orange-500 ">
                                         <NavLink onClick={handleUserLogOut} >Sign Out</NavLink>
                                     </p>
 
 
-                                </li> : <li className="mr-10 border-fuchsia-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-fuchsia-500">
-                                    <NavLink className={({ isActive }) => (isActive ? 'text-purple-500' : 'default')} to='/login'>Login</NavLink>
+                                </li> : <li className="mr-10 border-orange-500 border rounded-xl px-5 py-2  transition hover:scale-110 hover:shadow-lg text-orange-500">
+                                    <NavLink className={({ isActive }) => (isActive ? 'text-orange-500' : 'default')} to='/login'>Login</NavLink>
                                 </li>
                             }
                         </li>

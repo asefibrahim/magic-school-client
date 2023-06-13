@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaGoogle, FaUser, FaFile, FaPassport } from 'react-icons/fa';
+import { FaUser, FaFile, FaPassport } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import GoogleLogin from '../../../Shared/GoogleLogin';
@@ -46,7 +46,7 @@ const Signup = () => {
                 setError('')
                 Swal.fire('Registration Successful !')
                 console.log(loggedUser);
-                console.log(data);
+
 
                 updateUserProfile(data.name, image)
                     .then(() => {
@@ -73,6 +73,9 @@ const Signup = () => {
 
 
 
+            })
+            .catch(error => {
+                setError(error.message)
             })
 
 
@@ -170,9 +173,9 @@ const Signup = () => {
                                         Login
                                     </span>
                                 </button>
-                                <GoogleLogin></GoogleLogin>
-                            </form>
 
+                            </form>
+                            <GoogleLogin></GoogleLogin>
 
                             <div class="pt-12 pb-12 text-center">
                                 <p>
