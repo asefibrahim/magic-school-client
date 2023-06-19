@@ -48,7 +48,7 @@ const Login = () => {
                         </a>
                     </div>
                     <div class="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
-                        <p class="text-3xl text-center">
+                        <p class="text-3xl text-center text-white">
                             Login Here
                         </p>
                         <form onSubmit={handleSubmit} class="flex flex-col pt-3 md:pt-8">
@@ -81,16 +81,16 @@ const Login = () => {
 
                             </div>
                             <p className='text-red-600 mb-5'>{error}</p>
-                            <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
+                            <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-red-900 shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
                                 <span class="w-full">
                                     Login
                                 </span>
                             </button>
-                           
+
                         </form>
                         <GoogleLogin></GoogleLogin>
 
-                        <div class="pt-12 pb-12 text-center">
+                        <div class="pt-12 pb-12 text-white text-center">
                             <p>
                                 Don&#x27;t have an account?
                                 <Link to="/signUp" class="font-semibold underline">

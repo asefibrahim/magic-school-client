@@ -96,7 +96,7 @@ const Signup = () => {
                             </a>
                         </div>
                         <div class="flex flex-col justify-center px-8 pt-8 my-auto md:justify-start md:pt-0 md:px-24 lg:px-32">
-                            <p class="text-3xl text-center">
+                            <p class="text-3xl text-white text-center">
                                 Register Here
                             </p>
                             <form onSubmit={handleSubmit(onSubmit)} class="flex flex-col pt-3 md:pt-8">
@@ -168,7 +168,7 @@ const Signup = () => {
                                     <p className='text-red-600'>{error}</p>
                                 </div>
 
-                                <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
+                                <button type="submit" class="w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-red-900 shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
                                     <span class="w-full">
                                         Login
                                     </span>
@@ -177,7 +177,7 @@ const Signup = () => {
                             </form>
                             <GoogleLogin></GoogleLogin>
 
-                            <div class="pt-12 pb-12 text-center">
+                            <div class="pt-12 text-white     pb-12 text-center">
                                 <p>
                                     Already have an account?
                                     <Link to="/login" class="font-semibold underline">

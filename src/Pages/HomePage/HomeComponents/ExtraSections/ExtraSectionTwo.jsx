@@ -4,11 +4,14 @@ import { FaLandmark, FaRegFile, FaUserNurse } from 'react-icons/fa';
 const ExtraSectionTwo = () => {
     return (
         <div>
-            <section>
+            <section className='mt-20 mb-20'>
                 <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
                         <div class="relative z-10 lg:py-16">
-                            <div class="relative h-64 sm:h-80 lg:h-full">
+                            <div data-aos="fade-up-right"
+                                data-aos-duration="1500"
+
+                                class="relative h-64 sm:h-80 lg:h-full">
                                 <img
                                     alt="House"
                                     src="https://kitnew.moxcreative.com/magickom/wp-content/uploads/sites/4/2022/10/he-s-takes-your-card-magician-in-black-suit-standing-in-the-room-with-special-lighting-at-backstage-1536x1025.jpg"
@@ -17,16 +20,17 @@ const ExtraSectionTwo = () => {
                             </div>
                         </div>
 
-                        <div class="relative flex  w-full bg-slate-900">
+                        <div class="relative flex  w-full bg-black/30">
                             <span
-                                class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-slate-900"
+                                class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-black/30"
                             ></span>
 
-                            <div class=" sm:p-16 space-y-5 lg:p-10 text-orange-400 px-6 ">
-                                <h2 class="text-2xl text-slate-200 font-bold sm:text-2xl mt-5  mb-2">
+                            <div data-aos="fade-up-left"
+                                data-aos-duration="1000" class=" sm:p-16 space-y-5 lg:p-10 text-orange-400 px-6 ">
+                                <h2 class="text-2xl font-bold sm:text-2xl mt-5   mb-2">
                                     BENEFIT OUR CLASSES
                                 </h2>
-                                <h2 class="text-2xl font-medium sm:text-5xl w-full mb-5">
+                                <h2 class="text-2xl font-medium sm:text-4xl  w-full mb-5">
                                     Take a lover who looks at you like maybe you are magic
                                 </h2>
                                 <p className='text-slate-200'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
@@ -37,7 +41,7 @@ const ExtraSectionTwo = () => {
                                     </div>
 
                                     <div>
-                                        <h1 className='text-2xl font-bold sm:text-3xl mt-6'>Free register membership.</h1> <br />
+                                        <h1 className='text-2xl font-bold sm:text-2xl mt-6'>Free register membership.</h1> <br />
 
                                     </div>
                                 </div>
@@ -47,7 +51,7 @@ const ExtraSectionTwo = () => {
                                     </div>
 
                                     <div>
-                                        <h1 className='text-2xl font-bold sm:text-3xl mt-6'>
+                                        <h1 className='text-2xl font-bold sm:text-2xl mt-6'>
                                             Discount for our merch.</h1> <br />
 
                                     </div>
@@ -58,7 +62,7 @@ const ExtraSectionTwo = () => {
                                     </div>
 
                                     <div>
-                                        <h1 className='text-2xl font-bold sm:text-3xl mt-6'>24/7 premium support</h1> <br />
+                                        <h1 className='text-2xl font-bold sm:text-2xl mt-6'>24/7 premium support</h1> <br />
 
                                     </div>
                                 </div>

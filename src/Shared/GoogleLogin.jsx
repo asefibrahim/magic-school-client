@@ -35,7 +35,7 @@ const GoogleLogin = () => {
         <div>
             <div className="divider"></div>
             <div className="w-full text-center my-4">
-                <button onClick={handleGoogleSignIn} class="w-full px-4 py-3 text-base font-semibold text-center text-white transition duration-200 ease-in bg-black shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
+                <button onClick={handleGoogleSignIn} class="w-full px-4 py-3 text-base font-semibold text-center text-white transition duration-200 ease-in bg-red-900 shadow-md hover:text-black hover:bg-white focus:outline-none focus:ring-2 ">
                     <div class="w-4/5 mx-auto ms-44  text-center">
                         <p> <FaGoogle></FaGoogle></p>
                     </div>

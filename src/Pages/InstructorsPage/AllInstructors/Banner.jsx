@@ -3,9 +3,12 @@ import React from 'react';
 const Banner = ({ title, img, }) => {
     return (
         <div>
-            <section class="bg-gray-900 h-[500px] md:flex gap-5  items-center text-white pe-16" >
+            <section class="bg-slate-950 h-[500px] md:flex gap-5  items-center text-white pe-16" >
                 <div
                     class=" py-32 px-12 "
+
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
                 >
                     <div class="mx-auto  text-start">
                         <h1

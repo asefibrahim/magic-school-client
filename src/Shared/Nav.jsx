@@ -36,17 +36,13 @@ export const Nav = ({ dark, setDark }) => {
 
 
 
-        <li>
-            <input type="checkbox" className="toggle toggle-primarygit" onChange={handleCheckboxChange} />
-
-        </li>
 
 
 
     </>
 
     return (
-        <div class="bg-[#1d1c1c]">
+        <div class="bg-[#0d0c0c]">
             <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div class="relative flex items-center justify-between">
                     <a

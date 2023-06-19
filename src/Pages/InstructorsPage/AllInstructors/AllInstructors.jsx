@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Banner from './Banner';
-
+import '../bg/bg.css'
+import CardLoading from '../../../components/CardLoading';
 const AllInstructors = () => {
-
+    const [loading, setLoading] = useState(true)
     const [AllInstructors, setAllInstructors] = useState([])
     useEffect(() => {
         fetch('https://illusion-school-server.vercel.app/instructors')
             .then(res => res.json())
             .then(data => setAllInstructors(data))
+        setLoading(false)
     }, [])
     console.log(AllInstructors);
 
     return (
-        <div>
+        <div className='Blogs overflow-hidden'>
             <Banner title={'Meet  our all the talented instructors'}
 
                 img={"https://embed.lottiefiles.com/animation/72882"}
@@ -24,12 +26,18 @@ const AllInstructors = () => {
 
 
                 </div>
-                <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+                {loading ? <CardLoading></CardLoading> : <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 " >
 
 
                     {
+
+
+
+
+
                         AllInstructors.map((single, index) => <div key={index}>
-                            <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl h-96 hover:border-amber-500/100 hover:shadow-sky-500/100 ">
+                            <div data-aos="zoom-in-left" className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl h-96 hover:border-amber-500/100 hover:shadow-sky-500/100 ">
                                 <img
                                     className="object-cover w-full  md:h-96 xl:h-96"
                                     src={single.image}
@@ -58,7 +66,7 @@ const AllInstructors = () => {
 
 
 
-                </div>
+                </div>}
             </div>
 
         </div>

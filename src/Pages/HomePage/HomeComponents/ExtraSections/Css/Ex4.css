@@ -1,0 +1,15 @@
+.contact_title {
+    background: linear-gradient(45deg,
+            rgba(5, 19, 57, 0.826) 0%,
+            rgba(16, 84, 85, 0.754) 100%),
+        url(https://images.pexels.com/photos/4355630/pexels-photo-4355630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title_heading {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

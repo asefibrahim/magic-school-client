@@ -9,8 +9,8 @@ const ClassSection = () => {
     }, [])
 
     return (
-        <div>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className='overflow-hidden'>
+            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 overflow-hidden">
                 <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
                     <h2 className="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-orange-400  sm:text-4xl sm:leading-none md:mb-6 group">
                         <span className="inline-block mb-1 sm:mb-4">
@@ -20,16 +20,16 @@ const ClassSection = () => {
                         </span>
                         <div className="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100" />
                     </h2>
-                    <p className="text-gray-600 lg:text-sm lg:max-w-md">
+                    <p className="text-gray-600 lg:text-sm lg:max-w-md text-yellow-600">
                         "Sed ut perspiciatis unde omnis iste natus error sit iste voluptatem
                         accusantium doloremque rem aperiam, ipsa eaque quae. Sed ut
                         perspiciatis unde omnis iste."
                     </p>
                 </div>
-                <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-3 sm:row-gap-6 sm:grid-cols-2">
+                <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-3 sm:row-gap-6 sm:grid-cols-2 overflow-hidden">
 
                     {
-                        popularClasses.map((singleClass, index) => <div key={index} className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
+                        popularClasses.map((singleClass, index) => <div data-aos="zoom-in-right" data-aos-duration="1000" key={index} className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
                             <img
                                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                                 src={singleClass.image}

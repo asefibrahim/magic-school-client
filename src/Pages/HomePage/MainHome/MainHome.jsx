@@ -5,17 +5,22 @@ import InstructorSection from '../HomeComponents/InstructorSection/InstractorSec
 import ExtraSectionOne from '../HomeComponents/ExtraSections/ExtraSectionOne';
 import Slider from '../HomeComponents/Slider/Slider';
 import ExtraSectionTwo from '../HomeComponents/ExtraSections/ExtraSectionTwo';
-const isDark = false
+import ExtraSectionThree from '../HomeComponents/ExtraSections/ExtraSectionThree';
+import ExtraFour from '../HomeComponents/ExtraSections/ExtraFour';
+import Review from '../HomeComponents/ExtraSections/Review';
+
 
 const MainHome = () => {
     return (
         <div>
             <Slider></Slider>
-
+            <ExtraSectionThree></ExtraSectionThree>
             <ClassSection></ClassSection>
             <InstructorSection></InstructorSection>
             <ExtraSectionTwo></ExtraSectionTwo>
-            <ExtraSectionOne></ExtraSectionOne>
+            <Review></Review>
+            <ExtraFour></ExtraFour>
+
 
         </div>
     );
